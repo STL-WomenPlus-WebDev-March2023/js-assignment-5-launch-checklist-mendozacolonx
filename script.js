@@ -1,19 +1,20 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function () {
-    let form = document.querySelector("form");
+    let form = document.querySelector("launchForm");
+    //Cannot read properties of null (reading 'addEventListener')????????
     form.addEventListener("submit", function (event) {
         //forgot the most important part, the defualt
         event.preventDefault();
 
         let pilot = document.querySelector("input[name=pilotName]");
         let copilot = document.querySelector("input[name=copilotName]");
-        let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+        let fuelLevel = Number(document.querySelector("input[name=fuelLevel]").value);
         //why sometimes cargo mss vs cargo level, confusing...
-        let cargoLevel = document.querySelector("input[name=cargoMass]").value;
+        let cargoLevel = Number(document.querySelector("input[name=cargoMass]").value);
         //do i need to do a let list yet?
-        //let list = document.querySelector(faultyItems);
-        formSubmission(document, pilot, copilot, fuelLevel, cargoLevel);
+        let list = document.querySelector("#faultyItems");
+        formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
     })
 
 
