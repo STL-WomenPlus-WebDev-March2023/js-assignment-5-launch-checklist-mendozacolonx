@@ -45,13 +45,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
 
-
-    let fuelStatus = document.querySelector("fuelStatus");
-    let cargoStatus = document.querySelector("cargoStatus");
+//had query selector, wrong
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
     //let list = document.querySelector();
 
+//hadquery selector, wrong
     //Cannot set properties of null (setting 'innerHTML') at formSubmission (scriptHelper.js:84:30) at HTMLFormElement.<anonymous> (script.js:16:9)
-    let launchStatus = document.querySelector("launchStatus");
+    let launchStatus = document.getElementById("launchStatus");
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel
     ) === "Empty" || validateInput(cargoLevel) === "Empty") {
@@ -79,9 +80,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     // Using template literals, update the li elements pilotStatus and copilotStatus to include the pilot's name and the co-pilot's name.
     //if(){
+        //why sometimes need.value, sometimes not
         else{
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
-        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
+        pilotStatus.innerHTML = `Pilot ${pilot.value} is ready`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot.value} is ready`;
         list.style.visibility = 'hidden';
         }
     

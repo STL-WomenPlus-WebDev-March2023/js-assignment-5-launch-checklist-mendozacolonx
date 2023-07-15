@@ -1,8 +1,10 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function () {
-    let form = document.querySelector("launchForm");
+    //launchForm wrong
+    let form = document.querySelector("form");
     //Cannot read properties of null (reading 'addEventListener')????????
+    //changed submit to formsubmit, did not work
     form.addEventListener("submit", function (event) {
         //forgot the most important part, the defualt
         event.preventDefault();
