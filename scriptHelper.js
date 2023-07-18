@@ -136,7 +136,7 @@ async function myFetch() {
 //pickplanet() takes in a list of planets
 //using math.random return one planet form the list with a randomly selected index.
 function pickPlanet(planets) {
-    let randomPlanet = planets[(Math.random() * planets.length)];
+    let randomPlanet = planets[Math.floor((Math.random() * planets.length))];
     return randomPlanet;
 }
 
